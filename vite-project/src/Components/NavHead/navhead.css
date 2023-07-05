@@ -1,9 +1,12 @@
 .navhead {
-  margin-top: 32px;
+  padding-top: 32px;
   margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
   border-bottom: 5px solid #212121;
+  background: #ededed;
+  position: sticky;
+  top: 0;
 }
 
 .name h1 {
@@ -15,6 +18,10 @@
   font-size: 32px;
   font-weight: 500;
   margin-bottom: 88px;
+}
+
+.name h2 span {
+  letter-spacing: -20px;
 }
 
 nav {

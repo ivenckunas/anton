@@ -1,32 +1,24 @@
 import './projectsgrid.css';
+import projectsArr from '../../Data/projectsArr';
+import {useContext} from 'react';
+import MainContext from '../../Context/MainContext';
 
 function ProjectsGrid() {
+	const {setProject} = useContext(MainContext);
+
 	return (
 		<div className='projects-grid'>
-			<div>
-				<img
-					src='https://images.pexels.com/photos/4965825/pexels-photo-4965825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-					alt=''
-				/>
-			</div>
-			<div>
-				<img
-					src='https://images.pexels.com/photos/534153/pexels-photo-534153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-					alt=''
-				/>
-			</div>
-			<div>
-				<img
-					src='https://images.pexels.com/photos/1048049/pexels-photo-1048049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-					alt=''
-				/>
-			</div>
-			<div>
-				<img
-					src='https://images.pexels.com/photos/997365/pexels-photo-997365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-					alt=''
-				/>
-			</div>
+			{projectsArr.map((project, id) => (
+				<div
+					key={id}
+					onClick={() => setProject(id)}
+				>
+					<img
+						src={project.image}
+						alt={`${project.name} image`}
+					/>
+				</div>
+			))}
 		</div>
 	);
 }

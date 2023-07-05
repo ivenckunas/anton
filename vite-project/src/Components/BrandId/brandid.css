@@ -1,0 +1,24 @@
+.brand-container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  /* gap: 16pcontainer */
+}
+
+.brand-img {
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.name {
+  font-size: 70px;
+  margin-bottom: 25px;
+}
+
+.subtitle {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 18px;
+}
