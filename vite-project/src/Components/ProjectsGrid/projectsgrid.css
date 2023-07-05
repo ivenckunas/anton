@@ -1,29 +1,12 @@
-.projectsgrid {
+.projects-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.left,
-.top,
-.bot {
-  background: grey;
-}
-
-.left {
+.projects-grid img {
+  width: 100%;
   height: 567px;
-  margin-right: 16px;
-}
-
-.right {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.right .top {
-  height: 364px;
-}
-
-.right .bot {
-  height: 195px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }

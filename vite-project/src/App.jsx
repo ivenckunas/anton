@@ -6,7 +6,7 @@ import ProjectsGrid from './Components/ProjectsGrid/ProjectsGrid';
 
 function App() {
 	return (
-		<div className='container'>
+		<div>
 			<NavHead />
 			<ProjectsGrid />
 		</div>
