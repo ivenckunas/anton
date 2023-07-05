@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Pitagon;
+  src: url(PitagonSansText-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Pitagon;
+  src: url(PitagonSansText-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Pitagon;
+  src: url(PitagonSansText-SemiBold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Pitagon;
+  src: url(PitagonSansText-Bold.ttf);
+  font-weight: 700;
+}

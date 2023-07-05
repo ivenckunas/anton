@@ -1,0 +1,29 @@
+.projectsgrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.left,
+.top,
+.bot {
+  background: grey;
+}
+
+.left {
+  height: 567px;
+  margin-right: 16px;
+}
+
+.right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.right .top {
+  height: 364px;
+}
+
+.right .bot {
+  height: 195px;
+}
