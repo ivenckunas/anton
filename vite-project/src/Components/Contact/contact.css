@@ -1,0 +1,25 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60dvh;
+}
+
+.contact .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact h2 {
+  font-size: 120px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -4.8px;
+}
+
+.contact a {
+  font-size: 29px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: -0.87px;
+}

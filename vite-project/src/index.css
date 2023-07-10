@@ -1,5 +1,5 @@
 body {
   font-family: Pitagon;
+  scroll-behavior: smooth;
   margin: 0 32px;
-  height: 2000px;
 }

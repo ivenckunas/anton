@@ -17,11 +17,11 @@
 .name h2 {
   font-size: 32px;
   font-weight: 500;
-  margin-bottom: 88px;
+  margin-bottom: 32px;
 }
 
 .name h2 span {
-  letter-spacing: -20px;
+  letter-spacing: -5px;
 }
 
 nav {
