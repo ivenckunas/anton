@@ -23,10 +23,7 @@ function ProjectsGrid() {
 	}, []);
 
 	return (
-		<div
-			className='projects-grid'
-			onScroll={() => setCursorPosition({x: null, y: null})}
-		>
+		<div className='projects-grid'>
 			{projectsArr.map((project, id) => (
 				<div
 					className='single-project'
@@ -34,7 +31,12 @@ function ProjectsGrid() {
 					onClick={() => {
 						setHome(false);
 						setProject(id);
-						nav(`/project/${id}`);
+
+						if (project.type === 'brand') {
+							nav(`/brand/${id}`);
+						} else {
+							nav(`/poster/${id}`);
+						}
 					}}
 					onMouseEnter={() => setCurrentHover(id)}
 					onMouseOut={() => setCurrentHover(null)}
@@ -48,9 +50,9 @@ function ProjectsGrid() {
 			{currentHover !== null && (
 				<div
 					className='cursor'
-					style={{top: cursorPosition.y - 300, left: cursorPosition.x - 65}}
+					style={{top: cursorPosition.y - 100, left: cursorPosition.x - 65}}
 				>
-					aaa
+					{projectsArr[currentHover].name}
 				</div>
 			)}
 		</div>

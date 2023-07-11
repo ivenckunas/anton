@@ -1,8 +1,8 @@
 .projects-grid {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  position: relative;
   overflow: hidden;
 }
 
@@ -15,20 +15,16 @@
 
 .single-project {
   transition: 0.3s ease-in-out;
-
 }
-
 
 .single-project:hover {
   cursor: pointer;
   filter: brightness(0.5);
-
 }
 
 
 .cursor {
   position: absolute;
   padding: 20px;
-  background-color: red;
-
+  color: white;
 }

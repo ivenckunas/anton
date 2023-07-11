@@ -9,6 +9,7 @@ import MainContext from './Context/MainContext';
 import {useState} from 'react';
 import Contact from './Components/Contact/Contact';
 import Info from './Components/Info/Info';
+import Poster from './Components/Poster/Poster';
 
 function App() {
 	const [project, setProject] = useState(null);
@@ -30,8 +31,12 @@ function App() {
 						element={<ProjectsGrid />}
 					/>
 					<Route
-						path={`/project/${project}`}
+						path={`/brand/${project}`}
 						element={<BrandId />}
+					/>
+					<Route
+						path={`/poster/${project}`}
+						element={<Poster />}
 					/>
 					<Route
 						path='/contact'
