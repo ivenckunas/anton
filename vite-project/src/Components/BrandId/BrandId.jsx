@@ -9,9 +9,18 @@ function BrandId() {
 				/>
 			</div>
 			<div className='brand-desc'>
-				<h2 className='name'>Project name</h2>
-				<p className='subtitle'>Typography</p>
+				<h2 className='name'>Hirundo farm</h2>
 				<p className='desc'>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+				<ul>
+					<li className='active'>Logo</li>
+					<li>Colors</li>
+					<li>Typography</li>
+					<li>Iconography</li>
+					<li>Imagery</li>
+					<li>Personality</li>
+					<li>Voice</li>
+					<li>Web</li>
+				</ul>
 			</div>
 		</div>
 	);

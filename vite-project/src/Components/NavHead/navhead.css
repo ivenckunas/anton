@@ -1,4 +1,5 @@
 .navhead {
+  height: 200px;
   padding-top: 32px;
   margin-bottom: 16px;
   display: flex;
@@ -7,17 +8,37 @@
   background: #ededed;
   position: sticky;
   top: 0;
+  transition: 0.5s;
+  z-index: 5;
+}
+
+.scrolled-navhead {
+  height: 120px;
+  padding-top: 32px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 5px solid #212121;
+  background: #ededed;
+  position: sticky;
+  top: 0;
+  transition: 0.5s;
+  z-index: 5;
+}
+
+.name {
+  transition: 1s ease-in-out;
 }
 
 .name h1 {
   font-size: 40px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .name h2 {
   font-size: 32px;
   font-weight: 500;
-  margin-bottom: 32px;
 }
 
 .name h2 span {
@@ -26,6 +47,7 @@
 
 nav {
   display: flex;
+  transition: 1s ease-in-out;
 }
 
 nav ul {
@@ -39,4 +61,44 @@ nav ul li {
   margin-bottom: 32px;
   font-size: 21px;
   font-weight: 700;
+}
+
+.fade-out-top {
+  animation: fade-out-top 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade-out-top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+
+.fade-in-top {
+  animation: fade-in-top 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade-in-top {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+  80% {
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

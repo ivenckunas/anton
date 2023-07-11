@@ -1,22 +1,47 @@
-import {useContext} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import './navhead.css';
 import MainContext from '../../Context/MainContext';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 function NavHead() {
-	const {project, setProject, offset, home, setHome} = useContext(MainContext);
+	const {project, setProject, home, setHome} = useContext(MainContext);
 
-	const reset = () => {
+	const [pos, setPos] = useState(0);
+
+	const position = () => {
+		setPos(window.scrollY);
+	};
+
+	useEffect(() => {
+		document.addEventListener('wheel', position);
+		return () => {
+			document.removeEventListener('wheel', position);
+		};
+	}, []);
+
+	const nav = useNavigate();
+
+	const navToPage = () => {
 		setProject(null);
 		setHome(false);
 	};
 
+	const navToHome = () => {
+		setProject(null);
+		setHome(true);
+		setPos(0);
+		nav('/');
+	};
+
 	return (
-		<div className='navhead'>
-			<div className='name'>
-				<h1 style={home ? {marginBottom: 0} : {marginBottom: '25px'}}>Antón Polujanov</h1>
-				{project === null && home && offset === 0 ? (
-					<h2>
+		<div className={`${pos > 0 || !home ? 'scrolled-navhead' : 'navhead'}`}>
+			<div
+				className='name'
+				onClick={navToHome}
+			>
+				<h1>Antón Polujanov</h1>
+				{project === null && home ? (
+					<h2 className={`${pos > 0 ? 'fade-out-top' : 'fade-in-top'}`}>
 						Freelance creative developer <span>&amp;&amp;</span>
 						<br /> graphic designer
 					</h2>
@@ -26,18 +51,13 @@ function NavHead() {
 			</div>
 			<nav>
 				<ul>
-					<li
-						onClick={() => {
-							setProject(null);
-							setHome(true);
-						}}
-					>
+					<li onClick={navToHome}>
 						<Link to='/'>Work</Link>
 					</li>
-					<li onClick={reset}>
+					<li onClick={navToPage}>
 						<Link to='/info'>Info</Link>
 					</li>
-					<li onClick={reset}>
+					<li onClick={navToPage}>
 						<Link to='/contact'>Contact</Link>
 					</li>
 				</ul>
