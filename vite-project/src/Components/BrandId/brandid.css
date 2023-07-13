@@ -49,3 +49,9 @@
 .brand-container .active {
   color: #212121;
 }
+
+.active-brand-img {
+  width: 65dvw;
+  padding-right: 16px;
+  margin-right: 16px;
+}
