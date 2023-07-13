@@ -102,3 +102,18 @@ nav ul li {
     opacity: 1;
   }
 }
+
+.burger {
+  font-size: 30px;
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .burger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+}

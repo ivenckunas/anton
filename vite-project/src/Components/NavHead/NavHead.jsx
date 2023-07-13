@@ -2,6 +2,7 @@ import {useContext, useEffect, useState} from 'react';
 import './navhead.css';
 import MainContext from '../../Context/MainContext';
 import {Link, useNavigate} from 'react-router-dom';
+import {GiHamburgerMenu} from 'react-icons/gi';
 
 function NavHead() {
 	const {project, setProject, home, setHome} = useContext(MainContext);
@@ -49,6 +50,7 @@ function NavHead() {
 					''
 				)}
 			</div>
+
 			<nav>
 				<ul>
 					<li onClick={navToHome}>
@@ -62,6 +64,9 @@ function NavHead() {
 					</li>
 				</ul>
 			</nav>
+			<div className='burger'>
+				<GiHamburgerMenu />
+			</div>
 		</div>
 	);
 }
