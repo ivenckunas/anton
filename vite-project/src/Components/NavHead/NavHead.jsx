@@ -8,23 +8,39 @@ function NavHead() {
 	const {project, setProject, home, setHome} = useContext(MainContext);
 
 	const [pos, setPos] = useState(0);
+	const [burgerOpen, setBurgerOpen] = useState(false);
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const desktopWidthThreshold = 1024;
+
+	useEffect(() => {
+		document.addEventListener('wheel', position);
+		window.addEventListener('resize', handleWindowSizeChange);
+		return () => {
+			window.removeEventListener('resize', handleWindowSizeChange);
+			document.removeEventListener('wheel', position);
+		};
+	}, []);
+
+	useEffect(() => {
+		if (windowWidth >= desktopWidthThreshold) {
+			setBurgerOpen(false);
+		}
+	}, [windowWidth, desktopWidthThreshold]);
+
+	const handleWindowSizeChange = () => {
+		setWindowWidth(window.innerWidth);
+	};
 
 	const position = () => {
 		setPos(window.scrollY);
 	};
-
-	useEffect(() => {
-		document.addEventListener('wheel', position);
-		return () => {
-			document.removeEventListener('wheel', position);
-		};
-	}, []);
 
 	const nav = useNavigate();
 
 	const navToPage = () => {
 		setProject(null);
 		setHome(false);
+		setBurgerOpen(false);
 	};
 
 	const navToHome = () => {
@@ -32,6 +48,7 @@ function NavHead() {
 		setHome(true);
 		setPos(0);
 		nav('/');
+		setBurgerOpen(false);
 	};
 
 	return (
@@ -51,21 +68,21 @@ function NavHead() {
 				)}
 			</div>
 
-			<nav>
+			<nav className={burgerOpen ? 'mobile-nav' : 'desktop-nav'}>
 				<ul>
 					<li onClick={navToHome}>
 						<Link to='/'>Work</Link>
 					</li>
-					<li onClick={navToPage}>
+					{/* <li onClick={navToPage}>
 						<Link to='/info'>Info</Link>
-					</li>
+					</li> */}
 					<li onClick={navToPage}>
 						<Link to='/contact'>Contact</Link>
 					</li>
 				</ul>
 			</nav>
 			<div className='burger'>
-				<GiHamburgerMenu />
+				<GiHamburgerMenu onClick={() => setBurgerOpen(!burgerOpen)} />
 			</div>
 		</div>
 	);

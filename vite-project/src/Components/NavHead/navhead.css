@@ -57,6 +57,8 @@ nav ul {
   align-items: flex-end;
 }
 
+
+
 nav ul li {
   margin-bottom: 32px;
   font-size: 21px;
@@ -103,15 +105,34 @@ nav ul li {
   }
 }
 
+.mobile-nav {
+  display: none;
+}
+
 .burger {
   font-size: 30px;
   display: none;
+  z-index: 4;
 }
 
 @media screen and (max-width: 1024px) {
   .burger {
     display: block;
   }
+
+  .mobile-nav {
+    margin: 0;
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    top: 0;
+    left: -32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+  }
+
 
   nav {
     display: none;
